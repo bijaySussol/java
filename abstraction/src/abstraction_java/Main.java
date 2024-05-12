@@ -7,5 +7,7 @@ public class Main {
 		Cat myCat = new Cat("White Cat", 20);
 		myCat.makeNoise();
 		myCat.printName(myCat.name, myCat.age);
+		Dog myDog = new Dog();
+		myDog.poop();
 	}
 }
