@@ -6,12 +6,10 @@ public class App {
         try (Scanner input = new Scanner(System.in)) {
             System.out.print("Enter number of elements you want in array:");
             if(input.hasNextInt()) {
-                input.reset();
                 int userInput = input.nextInt();
                 if(userInput > 0) {
                     int [] arguments = createElement(userInput);
                     int argumentsLength = arguments.length;
-                    // System.out.println("Here is your arguments: "+ Arrays.toString(arguments));
                     System.out.print("Enter the position where you want to insert element:");
                     if(input.hasNextInt()) {
                         int userPosition = input.nextInt();
