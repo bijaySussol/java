@@ -14,15 +14,14 @@ public class App {
                     if(input.hasNextInt()) {
                         int userPosition = input.nextInt();
                         if(userPosition > 0) {
-                            int index = input.nextInt();
-                            if(index > argumentsLength) {
+                            if(userPosition > argumentsLength) {
                                 checkInputValidity("outofbound");
                             } else {
                                 System.out.print("Enter the element you want to insert:");
                                 if(input.hasNextInt()) {
                                     int element = input.nextInt();
                                     if(element > 0) {
-                                        insertElement(index, argumentsLength+1, element);// Argument length is +1 as we need to insert/make a room to insert new element
+                                        insertElement(userPosition, argumentsLength+1, element);// Argument length is +1 as we need to insert/make a room to insert new element
                                     } else {
                                         checkInputValidity("number");
                                     }
