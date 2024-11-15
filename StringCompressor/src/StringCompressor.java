@@ -12,7 +12,17 @@ public class StringCompressor {
         return uniqueWordCharacters;
     }
 
+    private static int countCharacterOccurances(String inputString, char targetCharacter) {
+        return (int) inputString.chars()
+                    .filter(c -> c == targetCharacter)
+                    .count();
+    }
+
     public static void main(String[] args) {
-        System.out.println(getUniqueWords("apple".toCharArray()));
+        String inputString = "banana";
+        ArrayList<Character> uniqueCharacters = getUniqueWords(inputString.toCharArray());
+        for(char targetCharacter: uniqueCharacters) {
+            System.out.println("Char count for "+targetCharacter+" "+countCharacterOccurances(inputString, targetCharacter));
+        }
     }
 }
