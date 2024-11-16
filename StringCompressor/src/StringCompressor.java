@@ -20,9 +20,16 @@ public class StringCompressor {
 
     public static void main(String[] args) {
         String inputString = "banana";
+        boolean validInputString = inputString.length() > 0;
+        if (!validInputString){System.out.println("INVALID INPUT!");};
         ArrayList<Character> uniqueCharacters = getUniqueWords(inputString.toCharArray());
+        String outputString = "";
+        int characterCount;
         for(char targetCharacter: uniqueCharacters) {
-            System.out.println("Char count for "+targetCharacter+" "+countCharacterOccurances(inputString, targetCharacter));
+            characterCount = countCharacterOccurances(inputString, targetCharacter);
+            // System.out.println("Char count for "+targetCharacter+" "+characterCount);
+            outputString = outputString+targetCharacter+(characterCount > 1 ? Integer.toString(characterCount) : "");
         }
+        if (validInputString) {System.out.println("Compressed string results: "+outputString);}
     }
 }
