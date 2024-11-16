@@ -29,7 +29,7 @@ public class CommonWords {
     private static void printNumberOfOccurances(ArrayList<Character> characters, String input) {
         for (Character character : characters) {
             int occurences =numberOfOccurances(input, character);
-            System.out.println("Occurences of character "+character+": "+occurences);
+            System.out.println("Occurences of character "+"'"+character+"'"+": "+occurences);
         }
     }
     
@@ -72,12 +72,12 @@ public class CommonWords {
         }
     }
     public static void main(String[] args) {
-        String input = "javaaavjjjjjaa";
+        String input = "application";
         char [] words = getCharacterInArray(input);
         if (words.length>0) {
             ArrayList<Character> uniqueWordCharacters = getUniqueWords(words);
             if (uniqueWordCharacters.size() == words.length) {
-                System.out.println("Cannot find the most repeated word in the provided arguments. See below occurances.");
+                System.out.println("Cannot find the most repeated word in the provided arguments "+"'"+input+"'"+" See below results.");
                 printNumberOfOccurances(uniqueWordCharacters, input);
             } else {
                 ArrayList<Integer> wordsCounts = new ArrayList<Integer>();
